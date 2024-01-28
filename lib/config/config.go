@@ -49,7 +49,7 @@ var (
 		"dynamic+https://relays.syncthing.net/endpoint",
 		netutil.AddressURL("quic", net.JoinHostPort("0.0.0.0", strconv.Itoa(DefaultQUICPort))),
 	}
-	DefaultGUIPort = 8384
+	DefaultGUIPort = 42000
 	// DefaultDiscoveryServersV4 should be substituted when the configuration
 	// contains <globalAnnounceServer>default-v4</globalAnnounceServer>.
 	DefaultDiscoveryServersV4 = []string{

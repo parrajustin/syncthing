@@ -6,6 +6,25 @@
 [![CII Best Practices](https://bestpractices.coreinfrastructure.org/projects/88/badge)](https://bestpractices.coreinfrastructure.org/projects/88)
 [![Go Report Card](https://goreportcard.com/badge/github.com/syncthing/syncthing)](https://goreportcard.com/report/github.com/syncthing/syncthing)
 
+## Docker build
+
+Changed the gui port to 42000
+
+```bash
+docker login -u xerofuzzion 
+docker build -t xerofuzzion/syncthing-truescale:0.0.2 -t xerofuzzion/syncthing-truescale:latest --progress plain .
+docker image push xerofuzzion/go-ffmpeg-worker:latest
+```
+
+## Docker run
+
+```bash
+docker run -p 42000:42000 -p 22000:22000/tcp -p 22000:22000/udp -p 21027:21027/udp \
+    -v /wherever/st-sync:/var/syncthing \
+    --hostname=my-syncthing \
+    xerofuzzion/syncthing-truescale:latest
+```
+
 ## Goals
 
 Syncthing is a **continuous file synchronization program**. It synchronizes
